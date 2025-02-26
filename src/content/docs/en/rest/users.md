@@ -5,13 +5,13 @@ description: API Endpoints for User Management
 
 Retrieve a list of all users by using the `/users` endpoint.
 
-### Request
+##### Request
 
 ```sh
 GET https://api.escuelajs.co/api/v1/users
 ```
 
-### Response
+##### Response
 
 ```json
 [
@@ -31,13 +31,13 @@ GET https://api.escuelajs.co/api/v1/users
 
 Retrieve a specific user by providing the user's `id` as a path parameter: `/users/{id}`
 
-### Request
+##### Request
 
 ```sh
 GET https://api.escuelajs.co/api/v1/users/1
 ```
 
-### Response
+##### Response
 
 ```json
 {
@@ -54,7 +54,7 @@ GET https://api.escuelajs.co/api/v1/users/1
 
 Create a new user by sending a POST request with the required user data to the `/users/` endpoint.
 
-### Request
+##### Request
 
 ```sh
 POST https://api.escuelajs.co/api/v1/users/
@@ -68,7 +68,7 @@ POST https://api.escuelajs.co/api/v1/users/
 }
 ```
 
-### Response
+##### Response
 
 ```json
 {
@@ -87,7 +87,7 @@ POST https://api.escuelajs.co/api/v1/users/
 
 Update an existing user by sending a PUT request with the updated data and specifying the user's `id` as a path parameter: `/users/{id}`
 
-### Request
+##### Request
 
 ```sh
 PUT https://api.escuelajs.co/api/v1/users/1
@@ -99,7 +99,7 @@ PUT https://api.escuelajs.co/api/v1/users/1
 }
 ```
 
-### Response
+##### Response
 
 ```json
 {
@@ -118,7 +118,7 @@ PUT https://api.escuelajs.co/api/v1/users/1
 
 Verify if an email address is already registered in the system.
 
-### Request
+##### Request
 
 ```sh
 POST https://api.escuelajs.co/api/v1/users/is-available
@@ -129,7 +129,7 @@ POST https://api.escuelajs.co/api/v1/users/is-available
 }
 ```
 
-### Response
+##### Response
 
 ```json
 {
