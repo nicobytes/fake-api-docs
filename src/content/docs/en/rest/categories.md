@@ -20,7 +20,7 @@ Retrieve a list of all available categories.
     "name": "Clothes",
     "slug": "clothes",
     "image": "https://placehold.co/600x400"
-  },
+  }
   // Additional categories...
 ]
 ```
@@ -149,7 +149,7 @@ Retrieve all products that belong to a specific category with pagination support
       "https://placehold.co/600x400",
       "https://placehold.co/600x400"
     ]
-  },
+  }
   // Additional products...
 ]
 ```

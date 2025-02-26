@@ -22,7 +22,7 @@ GET https://api.escuelajs.co/api/v1/users
     "name": "Jhon",
     "role": "customer",
     "avatar": "https://i.imgur.com/LDOO4Qs.jpg"
-  },
+  }
   // ... additional users
 ]
 ```
@@ -143,11 +143,11 @@ This endpoint is particularly useful for implementing real-time email validation
 
 ## User Schema
 
-| Attribute | Type   | Description                                   |
-|-----------|--------|-----------------------------------------------|
-| id        | number | Unique identifier for the user                |
-| name      | string | User's full name                              |
-| role      | string | User's role (either "customer" or "admin")    |
-| email     | string | User's email address                          |
-| password  | string | User's password                               |
-| avatar    | string | URL to the user's profile image               |
+| Attribute | Type   | Description                                |
+| --------- | ------ | ------------------------------------------ |
+| id        | number | Unique identifier for the user             |
+| name      | string | User's full name                           |
+| role      | string | User's role (either "customer" or "admin") |
+| email     | string | User's email address                       |
+| password  | string | User's password                            |
+| avatar    | string | URL to the user's profile image            |

@@ -13,11 +13,11 @@ hero:
       variant: primary
 ---
 
-import { Code } from 'astro/components';
-import { Card, CardGrid } from '@astrojs/starlight/components';
-import CategoriesAPI from '../../components/PreviewAPI/CategoriesAPI.astro';
-import ProductsAPI from '../../components/PreviewAPI/ProductsAPI.astro';
-import UsersAPI from '../../components/PreviewAPI/UsersAPI.astro';
+import { Code } from "astro/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import CategoriesAPI from "../../components/PreviewAPI/CategoriesAPI.astro";
+import ProductsAPI from "../../components/PreviewAPI/ProductsAPI.astro";
+import UsersAPI from "../../components/PreviewAPI/UsersAPI.astro";
 
 <section class="section">
   <h3>Get products</h3>
@@ -48,31 +48,39 @@ import UsersAPI from '../../components/PreviewAPI/UsersAPI.astro';
 ## Features
 
 <CardGrid stagger>
-	<Card title="All CRUD Operations" icon="pencil">
-		Leverage our API to seamlessly perform all CRUD (Create, Read, Update, and Delete) operations without any limitations.
-	</Card>
-	<Card title="Pagination" icon="document">
-		Supports pagination through the 'limit' and 'offset' methods, allowing for features like infinite scroll.
-	</Card>
-	<Card title="Auth with JWT" icon="setting">
-		Utilize JWT for access and refresh tokens, and securely test endpoints with this authentication method.
-	</Card>
-	<Card title="Filters" icon="magnifier">
-		Filter products by price, title, and category, enabling the creation of sophisticated UIs based on these criteria.
-	</Card>
+  <Card title="All CRUD Operations" icon="pencil">
+    Leverage our API to seamlessly perform all CRUD (Create, Read, Update, and
+    Delete) operations without any limitations.
+  </Card>
+  <Card title="Pagination" icon="document">
+    Supports pagination through the 'limit' and 'offset' methods, allowing for
+    features like infinite scroll.
+  </Card>
+  <Card title="Auth with JWT" icon="setting">
+    Utilize JWT for access and refresh tokens, and securely test endpoints with
+    this authentication method.
+  </Card>
+  <Card title="Filters" icon="magnifier">
+    Filter products by price, title, and category, enabling the creation of
+    sophisticated UIs based on these criteria.
+  </Card>
   <Card title="Rest API" icon="star">
-		The API employs the REST API architecture, the most widely adopted structure in the industry.
-	</Card>
+    The API employs the REST API architecture, the most widely adopted structure
+    in the industry.
+  </Card>
   <Card title="GraphQL" icon="rocket">
-		The API supports GraphQL, a query language for APIs, and offers a runtime to execute those queries using your existing data.
-	</Card>
+    The API supports GraphQL, a query language for APIs, and offers a runtime to
+    execute those queries using your existing data.
+  </Card>
   <Card title="Files" icon="add-document">
-		You can upload files using `multipart/form-data`.
-	</Card>
+    You can upload files using `multipart/form-data`.
+  </Card>
   <Card title="Postam and Insomia" icon="random">
-		We provide files for both Postman and Insomnia, allowing you to easily test each endpoint.
-	</Card>
+    We provide files for both Postman and Insomnia, allowing you to easily test
+    each endpoint.
+  </Card>
   <Card title="AI Images" icon="sun">
-		Images are crafted using AI to ensure your projects looks so professionalism.
-	</Card>
+    Images are crafted using AI to ensure your projects looks so
+    professionalism.
+  </Card>
 </CardGrid>

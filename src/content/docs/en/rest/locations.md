@@ -19,14 +19,14 @@ Retrieve a list of 10 locations randomly.
 
 ```json
 [
-    {
-        "id": 3456024234637667,
-        "name": "2063 Bath Street",
-        "description": "Urbanus illum aspernatur.",
-        "latitude": 4.647499671477389,
-        "longitude": -74.27320830941972
-    },
-    // Additional locations...
+  {
+    "id": 3456024234637667,
+    "name": "2063 Bath Street",
+    "description": "Urbanus illum aspernatur.",
+    "latitude": 4.647499671477389,
+    "longitude": -74.27320830941972
+  }
+  // Additional locations...
 ]
 ```
 
@@ -44,14 +44,14 @@ Retrieve locations sorted by distance from a specified origin point.
 
 ```json
 [
-    {
-        "id": 3456024234637667,
-        "name": "2063 Bath Street",
-        "description": "Urbanus illum aspernatur.",
-        "latitude": 4.647499671477389,
-        "longitude": -74.27320830941972
-    },
-    // Additional locations...
+  {
+    "id": 3456024234637667,
+    "name": "2063 Bath Street",
+    "description": "Urbanus illum aspernatur.",
+    "latitude": 4.647499671477389,
+    "longitude": -74.27320830941972
+  }
+  // Additional locations...
 ]
 ```
 
@@ -69,14 +69,14 @@ Retrieve a specific number of locations.
 
 ```json
 [
-    {
-        "id": 3456024234637667,
-        "name": "2063 Bath Street",
-        "description": "Urbanus illum aspernatur.",
-        "latitude": 4.647499671477389,
-        "longitude": -74.27320830941972
-    },
-    // Additional locations...
+  {
+    "id": 3456024234637667,
+    "name": "2063 Bath Street",
+    "description": "Urbanus illum aspernatur.",
+    "latitude": 4.647499671477389,
+    "longitude": -74.27320830941972
+  }
+  // Additional locations...
 ]
 ```
 
@@ -94,14 +94,14 @@ Retrieve locations within a specified radius (in kilometers) from an origin poin
 
 ```json
 [
-    {
-        "id": 3456024234637667,
-        "name": "2063 Bath Street",
-        "description": "Urbanus illum aspernatur.",
-        "latitude": 4.647499671477389,
-        "longitude": -74.27320830941972
-    },
-    // Additional locations...
+  {
+    "id": 3456024234637667,
+    "name": "2063 Bath Street",
+    "description": "Urbanus illum aspernatur.",
+    "latitude": 4.647499671477389,
+    "longitude": -74.27320830941972
+  }
+  // Additional locations...
 ]
 ```
 

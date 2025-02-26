@@ -1,16 +1,17 @@
 ---
-import type { Category } from '@models/index';
-const API = 'https://api.escuelajs.co/api/v1/categories?limit=5';
+import type { Category } from "@models/index";
+const API = "https://api.escuelajs.co/api/v1/categories?limit=5";
 const response = await fetch(API);
-const data = await response.json() as Category[];
+const data = (await response.json()) as Category[];
 ---
-<div class='grid grid-5 not-content'>
-	{data.map((item) => (
-    <article>
-      <img loading="lazy"src={item.image} alt={item.name} />
-      <p>{item.name}</p>
-    </article>
-  ))}
+
+<div class="grid grid-5 not-content">
+  {
+    data.map((item) => (
+      <article>
+        <img loading="lazy" src={item.image} alt={item.name} />
+        <p>{item.name}</p>
+      </article>
+    ))
+  }
 </div>
-
-

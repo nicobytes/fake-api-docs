@@ -327,15 +327,15 @@ You can get the list of related products by using the `/products/slug/<slug>/rel
 
 ## Product Schema
 
-| Attribute   | Type     | Description                                   | Required for Create |
-| ----------- | -------- | --------------------------------------------- | ------------------ |
-| id          | number   | The unique identifier of the product          | No (auto-generated)|
-| title       | string   | The name of the product                       | Yes                |
-| price       | number   | Price of the product                          | Yes                |
-| description | string   | Description of the product                    | Yes                |
-| categoryId  | number   | ID of the category (for create/update)        | Yes                |
-| category    | object   | Object containing category information        | No (auto-populated)|
-| images      | string[] | List of image URLs                            | Yes                |
-| slug        | string   | URL-friendly version of the title             | No (auto-generated)|
-| creationAt  | string   | Creation timestamp                            | No (auto-generated)|
-| updatedAt   | string   | Last update timestamp                         | No (auto-generated)|
+| Attribute   | Type     | Description                            | Required for Create |
+| ----------- | -------- | -------------------------------------- | ------------------- |
+| id          | number   | The unique identifier of the product   | No (auto-generated) |
+| title       | string   | The name of the product                | Yes                 |
+| price       | number   | Price of the product                   | Yes                 |
+| description | string   | Description of the product             | Yes                 |
+| categoryId  | number   | ID of the category (for create/update) | Yes                 |
+| category    | object   | Object containing category information | No (auto-populated) |
+| images      | string[] | List of image URLs                     | Yes                 |
+| slug        | string   | URL-friendly version of the title      | No (auto-generated) |
+| creationAt  | string   | Creation timestamp                     | No (auto-generated) |
+| updatedAt   | string   | Last update timestamp                  | No (auto-generated) |

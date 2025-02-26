@@ -4,6 +4,7 @@ description: API endpoints for JWT-based authentication and authorization
 ---
 
 This API uses JSON Web Tokens (JWT) for secure authentication. The authentication flow consists of three main operations:
+
 1. Obtaining access and refresh tokens via login
 2. Accessing protected resources using the access token
 3. Refreshing expired access tokens using the refresh token

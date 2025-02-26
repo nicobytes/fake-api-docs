@@ -1,15 +1,17 @@
 ---
-import type { User } from '@models/index';
-const API = 'https://api.escuelajs.co/api/v1/users?limit=3';
+import type { User } from "@models/index";
+const API = "https://api.escuelajs.co/api/v1/users?limit=3";
 const response = await fetch(API);
-const data = await response.json() as User[];
+const data = (await response.json()) as User[];
 ---
-<div class='grid grid-5 not-content'>
-	{data.map((item) => (
-    <article>
-      <img loading="lazy" src={item.avatar} alt="user" />
-      <p>{item.email}</p>
-    </article>
-  ))}
-</div>
 
+<div class="grid grid-5 not-content">
+  {
+    data.map((item) => (
+      <article>
+        <img loading="lazy" src={item.avatar} alt="user" />
+        <p>{item.email}</p>
+      </article>
+    ))
+  }
+</div>

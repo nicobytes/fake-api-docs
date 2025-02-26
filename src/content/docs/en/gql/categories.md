@@ -142,7 +142,6 @@ Mutation:
 mutation {
   deleteCategory(id: 12)
 }
-
 ```
 
 Response:

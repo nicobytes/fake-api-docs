@@ -107,7 +107,7 @@ Example: All products with a price between `100` and `1000`, and with a limit of
 
 ```graphql
 query {
-  products(offset: 10, limit:10, price_min: 900, price_max: 1000) {
+  products(offset: 10, limit: 10, price_min: 900, price_max: 1000) {
     title
     price
     category {

@@ -12,10 +12,10 @@ We'd love to feature your work! Open a PR to add your project to this showcase.
 
 The Platzi Fake Store API powers a diverse range of e-commerce applications created by our talented community. Browse through these inspiring projects to see what's possible:
 
-import { SHOWCASES } from '../../../../constants/showcase.ts';
+import { SHOWCASES } from "../../../../constants/showcase.ts";
 
-<div class='grid grid-3 not-content'>
-	{SHOWCASES.map((item) => (
+<div class="grid grid-3 not-content">
+  {SHOWCASES.map((item) => (
     <a href={item.link} target="_blank" rel="noopener noreferrer">
       <img loading="lazy" src={item.image} alt={item.title} />
       <p>{item.title}</p>
