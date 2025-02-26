@@ -1,23 +1,26 @@
 ---
-title: Files
-description: Endpoints for Categories
+title: Upload File
+description: Endpoints for file uploads and retrieval
 ---
 
-## Upload File
+This endpoint allows you to upload files to the server. The uploaded files can later be referenced in other resources such as product images.
 
-You can upload file by using the `/files/upload` endpoint but in header the `Content-Type` should be `multipart/form-data`.
+##### Request
 
-Request:
+To upload a file, send a POST request to the `/files/upload` endpoint. The request must use the `multipart/form-data` content type in the header.
 
 ```sh
 [POST] https://api.escuelajs.co/api/v1/files/upload
-# Body
+Content-Type: multipart/form-data
+#Body
 {
   "file": "<Binary File>"
 }
 ```
 
-The response is like this:
+##### Response
+
+A successful upload will return a JSON object containing information about the uploaded file:
 
 ```json
 {
@@ -27,10 +30,24 @@ The response is like this:
 }
 ```
 
-## Get a file
+## Get a File
 
-You can get a single file by adding the `fileName` as a parameter: `/files/{fileName}`
+You can retrieve a file by using its filename as a parameter in the URL path.
+
+##### Request
+
+```sh
+[GET] https://api.escuelajs.co/api/v1/files/{fileName}
+```
+
+Where `{fileName}` is the name of the file you want to retrieve (the `filename` value returned from the upload endpoint).
+
+Example:
 
 ```sh
 [GET] https://api.escuelajs.co/api/v1/files/f3a5.png
 ```
+
+##### Response
+
+The response will be the requested file with the appropriate content type.

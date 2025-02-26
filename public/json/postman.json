@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a4547345-fda2-4c10-9777-ece1562846b4",
+		"_postman_id": "00eb26cc-7d00-425b-9d14-370c7632c157",
 		"name": "Platzi Fake Store API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15445793"
+		"_exporter_id": "10183598"
 	},
 	"item": [
 		{
@@ -18,12 +18,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/products/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/products/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -41,18 +38,36 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/products/120",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/products/2",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
 										"v1",
 										"products",
-										"120"
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOne by Slug",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/v1/products/slug/classic-red-pullover-hoodie",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"slug",
+										"classic-red-pullover-hoodie"
 									]
 								}
 							},
@@ -65,7 +80,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"New Product\",\r\n    \"price\": 10,\r\n    \"description\": \"A description\",\r\n    \"categoryId\": 1,\r\n    \"images\": [\r\n        \"https://placeimg.com/640/480/any\"\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\": \"New Product\",\r\n    \"price\": 10,\r\n    \"description\": \"A description\",\r\n    \"categoryId\": 1,\r\n    \"images\": [\r\n        \"https://placehold.co/600x400\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -73,12 +88,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/products/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/products/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -97,7 +109,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Change title\",\r\n    \"price\": 100,\r\n    \"images\": [\r\n        \"https://placeimg.com/640/480/any\"\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\": \"Chage title\",\r\n    \"price\": 100,\r\n    \"images\": [\r\n        \"https://placehold.co/600x400\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -105,18 +117,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/products/1",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/products/2",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
 										"v1",
 										"products",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -128,12 +137,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/products/?offset=0&limit=10",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/products/?offset=0&limit=10",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -166,12 +172,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/categories/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/categories/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -189,18 +192,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/categories/1",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/categories/2",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
 										"v1",
 										"categories",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -221,18 +221,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/categories/1",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/categories/2",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
 										"v1",
 										"categories",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -245,7 +242,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Books\",\r\n  \"image\": \"https://api.lorem.space/image/book?w=150&h=220\"\r\n}",
+									"raw": "{\r\n  \"name\": \"New category\",\r\n  \"image\": \"https://placehold.co/600x400\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -253,12 +250,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/categories/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/categories/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -281,12 +275,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/users/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/users/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -304,12 +295,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/users/1",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/users/1",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -336,12 +324,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/users/1",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/users/1",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -368,12 +353,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/users/",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/users/",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -392,7 +374,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\"email\": \"maria@mail.com\"\r\n}",
+									"raw": "{\r\n\t\"email\": \"maasasriaa@mail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -400,12 +382,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/users/is-available",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/users/is-available",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -437,12 +416,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/auth/login",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/auth/login",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -462,7 +438,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AbWFpbC5jb20iLCJzdWIiOjEsImlhdCI6MTY0OTg4MTQ2NiwiZXhwIjoxNjQ5ODg1MDY2fQ.yVveqqmu6u3lN2UK0McQcfU9-vh8T6iDb6y-mHPhyzA",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc0MDU3NTcwOSwiZXhwIjoxNzQyMzAzNzA5fQ.68tGq1B_hDsxgjVQscsteZfVZEcL5prqQw8aZcuqGno",
 											"type": "string"
 										}
 									]
@@ -470,12 +446,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/auth/profile",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/auth/profile",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -503,17 +476,14 @@
 										{
 											"key": "file",
 											"type": "file",
-											"src": "/C:/Users/nicob/Downloads/Step3-graphic-1.png"
+											"src": "/Users/nicobytes1/Documents/Frame 1.png"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/files/upload",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/files/upload",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
@@ -544,18 +514,64 @@
 									]
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/api/v1/files/4c8b.png",
-									"protocol": "https",
+									"raw": "{{API_URL}}/api/v1/files/39a5.png",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"api",
 										"v1",
 										"files",
-										"4c8b.png"
+										"39a5.png"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "locations",
+					"item": [
+						{
+							"name": "all locations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/v1/locations",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"locations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "byLatLng",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/v1/locations?origin=6.2071641,-75.5720321",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"locations"
+									],
+									"query": [
+										{
+											"key": "origin",
+											"value": "6.2071641,-75.5720321"
+										}
 									]
 								}
 							},
@@ -584,12 +600,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.escuelajs.co/graphql",
-									"protocol": "https",
+									"raw": "{{API_URL}}/graphql",
 									"host": [
-										"api",
-										"escuelajs",
-										"co"
+										"{{API_URL}}"
 									],
 									"path": [
 										"graphql"

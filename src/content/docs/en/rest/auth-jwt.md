@@ -1,24 +1,32 @@
 ---
-title: Auth with JWT
-description: Endpoints for Auth with JWT
+title: Authentication with JWT
+description: API endpoints for JWT-based authentication and authorization
 ---
 
-## Authentication
+This API uses JSON Web Tokens (JWT) for secure authentication. The authentication flow consists of three main operations:
+1. Obtaining access and refresh tokens via login
+2. Accessing protected resources using the access token
+3. Refreshing expired access tokens using the refresh token
 
-You can do login by sending an object like the following to `/auth/login/`
+## Login
 
-Request:
+To authenticate a user and obtain JWT tokens, send a POST request with email and password credentials.
+
+### Request
 
 ```sh
-[POST] https://api.escuelajs.co/api/v1/auth/login
-# Body
+POST https://api.escuelajs.co/api/v1/auth/login
+Content-Type: application/json
+
 {
   "email": "john@mail.com",
   "password": "changeme"
 }
 ```
 
-The response is an access and refresh JWT tokens, like this:
+### Response
+
+Upon successful authentication, the server returns both access and refresh tokens:
 
 ```json
 {
@@ -27,23 +35,20 @@ The response is an access and refresh JWT tokens, like this:
 }
 ```
 
-> Note: The access token is valid for 20 days, and the refresh token is valid for 10 hours.
+> **Note:** The access token is valid for 20 days, and the refresh token is valid for 10 hours.
 
-## Get user with session
+## Retrieving User Profile
 
-You can get the profile the current user with session if in the headers include the `Authorization` key with the value `Bearer {your access token}` to `/auth/profile`
+To access the authenticated user's profile, include the access token in the Authorization header using the Bearer scheme.
 
-Request:
+### Request
 
 ```sh
-[GET] https://api.escuelajs.co/api/v1/auth/profile
-# Headers
-{
-  "Authorization": "Bearer {your access token}"
-}
+GET https://api.escuelajs.co/api/v1/auth/profile
+Authorization: Bearer {your_access_token}
 ```
 
-Response:
+### Response
 
 ```json
 {
@@ -56,19 +61,22 @@ Response:
 }
 ```
 
-## Get a new Access Token with a Refresh Token
+## Refreshing Access Token
 
-Request:
+When an access token expires, you can obtain a new pair of tokens by using the refresh token.
+
+### Request
 
 ```sh
-[POST] https://api.escuelajs.co/api/v1/auth/refresh-token
-# Body
+POST https://api.escuelajs.co/api/v1/auth/refresh-token
+Content-Type: application/json
+
 {
-  "refreshToken": "{your refresh token}"
+  "refreshToken": "{your_refresh_token}"
 }
 ```
 
-The response is a new access and refresh JWT tokens, like this:
+### Response
 
 ```json
 {
@@ -77,4 +85,14 @@ The response is a new access and refresh JWT tokens, like this:
 }
 ```
 
-> Note: The access token is valid for 20 days, and the refresh token is valid for 10 hours.
+> **Note:** The access token is valid for 20 days, and the refresh token is valid for 10 hours.
+
+## Error Handling
+
+Common authentication errors include:
+
+- **401 Unauthorized**: Invalid credentials or expired tokens
+- **403 Forbidden**: Valid authentication but insufficient permissions
+- **400 Bad Request**: Malformed request body or headers
+
+Always ensure your application properly handles token expiration by implementing automatic token refresh when needed.

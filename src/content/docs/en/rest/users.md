@@ -1,19 +1,17 @@
 ---
 title: Users
-description: Endpoints for Users
+description: API Endpoints for User Management
 ---
 
-## Get all users
+Retrieve a list of all users by using the `/users` endpoint.
 
-You can access the list of 3 users by using the `/users` endpoint.
-
-Request:
+### Request
 
 ```sh
-[GET] https://api.escuelajs.co/api/v1/users
+GET https://api.escuelajs.co/api/v1/users
 ```
 
-Response:
+### Response
 
 ```json
 [
@@ -23,23 +21,23 @@ Response:
     "password": "changeme",
     "name": "Jhon",
     "role": "customer",
-    "avatar": "https://i.imgur.com/LDOO4Qs.jpg",
+    "avatar": "https://i.imgur.com/LDOO4Qs.jpg"
   },
-  // ...
+  // ... additional users
 ]
 ```
 
-## Get a single user
+## Get a Single User
 
-You can get a single user by adding the `id` as a parameter: `/users/{id}`
+Retrieve a specific user by providing the user's `id` as a path parameter: `/users/{id}`
 
-Request:
+### Request
 
 ```sh
-[GET] https://api.escuelajs.co/api/v1/users/1
+GET https://api.escuelajs.co/api/v1/users/1
 ```
 
-Response:
+### Response
 
 ```json
 {
@@ -48,105 +46,108 @@ Response:
   "password": "changeme",
   "name": "Jhon",
   "role": "customer",
-  "avatar": "https://i.imgur.com/LDOO4Qs.jpg",
+  "avatar": "https://i.imgur.com/LDOO4Qs.jpg"
 }
 ```
 
-## Create a user
+## Create a User
 
-You can create a new user by sending an object like the following to `/users/`
+Create a new user by sending a POST request with the required user data to the `/users/` endpoint.
 
-Request:
+### Request
 
 ```sh
-[POST] https://api.escuelajs.co/api/v1/users/
-# Body
+POST https://api.escuelajs.co/api/v1/users/
+
+# Request Body
 {
   "name": "Nicolas",
   "email": "nico@gmail.com",
   "password": "1234",
-  "avatar": "https://picsum.photos/800",
+  "avatar": "https://picsum.photos/800"
 }
 ```
 
-Response:
+### Response
 
 ```json
 {
-	"email": "nico@gmail.com",
-	"password": "1234",
-	"name": "Nicolas",
-	"avatar": "https://i.imgur.com/yhW6Yw1.jpg",
-	"role": "customer",
-	"id": 24
+  "email": "nico@gmail.com",
+  "password": "1234",
+  "name": "Nicolas",
+  "avatar": "https://i.imgur.com/yhW6Yw1.jpg",
+  "role": "customer",
+  "id": 24
 }
 ```
 
-> Note that the password is not encrypted.
+> **Note:** For demonstration purposes, passwords are stored as plain text. In a production environment, always implement proper password encryption.
 
-## Update a user
+## Update a User
 
-You can update a user exists by sending an object like the following and adding the `id` as a parameter: `/users/{id}`
+Update an existing user by sending a PUT request with the updated data and specifying the user's `id` as a path parameter: `/users/{id}`
 
-Request:
+### Request
 
 ```sh
-[PUT] https://api.escuelajs.co/api/v1/users/1
-# Body
+PUT https://api.escuelajs.co/api/v1/users/1
+
+# Request Body
 {
   "email": "john@mail.com",
-  "name": "Change name",
+  "name": "Change name"
 }
 ```
 
-Response:
+### Response
 
 ```json
 {
-	"id": 4,
-	"email": "john@mail.com",
-	"password": "1234",
-	"name": "Change name",
-	"role": "admin",
-	"avatar": "https://i.imgur.com/yhW6Yw1.jpg",
+  "id": 4,
+  "email": "john@mail.com",
+  "password": "1234",
+  "name": "Change name",
+  "role": "admin",
+  "avatar": "https://i.imgur.com/yhW6Yw1.jpg"
 }
 ```
 
-> Note that it is not necessary to send all user attributes, just send the attributes that want to update.
+> **Note:** You only need to include the attributes you want to update in the request body. Other attributes will remain unchanged.
 
-## Check the email
+## Check Email Availability
 
-You can verify if an email is already registered in the API.
+Verify if an email address is already registered in the system.
 
-Request:
+### Request
 
 ```sh
-[POST] https://api.escuelajs.co/api/v1/users/is-available
-# Body
+POST https://api.escuelajs.co/api/v1/users/is-available
+
+# Request Body
 {
   "email": "john@mail.com"
 }
 ```
 
-Response:
+### Response
 
 ```json
 {
-	"isAvailable": false
+  "isAvailable": false
 }
 ```
 
-This feature is so useful for features like showing a message in a form and verifying the email before creating a user. For example:
+This endpoint is particularly useful for implementing real-time email validation in registration forms, allowing you to show immediate feedback to users about email availability.
 
-![Example](https://i.imgur.com/Igy8mhu.png)
+![Email Validation Example](https://i.imgur.com/Igy8mhu.png)
 
-## Schema User
+## User Schema
 
-| Attribute  | Type | Description |
-| --- | --- | --- |
-| id | number | The id of the user. |
-| name | string | The name of the user. |
-| role | string | The role of the user is customer or admin |
-| email | string | The email of the user. |
-| password | string | The password of the user. |
-| avatar | string | The string with URL to a image  |
+| Attribute | Type   | Description                                   |
+|-----------|--------|-----------------------------------------------|
+| id        | number | Unique identifier for the user                |
+| name      | string | User's full name                              |
+| role      | string | User's role (either "customer" or "admin")    |
+| email     | string | User's email address                          |
+| password  | string | User's password                               |
+| avatar    | string | URL to the user's profile image               |

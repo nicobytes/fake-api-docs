@@ -1,23 +1,23 @@
 ---
-title: Showcase
-description: Showcase
+title: Project Showcase
+description: Discover amazing projects built with the Platzi Fake Store API
 ---
 
-:::tip[Add your own!]
-Have you built a project using this API?
-Open a PR adding a link to this page!
+:::tip[Showcase Your Project]
+Have you built something awesome using the Platzi Fake Store API?
+We'd love to feature your work! Open a PR to add your project to this showcase.
 :::
 
-## Projects
+## Community Projects
 
-Platzi Fake Store API is used by users to create amazing e-commerce projects. These are some of the sites around the web:
+The Platzi Fake Store API powers a diverse range of e-commerce applications created by our talented community. Browse through these inspiring projects to see what's possible:
 
 import { SHOWCASES } from '../../../../constants/showcase.ts';
 
 <div class='grid grid-3 not-content'>
 	{SHOWCASES.map((item) => (
-    <a href={item.link} target="_blank">
-      <img loading="lazy"src={item.image} alt={item.title} />
+    <a href={item.link} target="_blank" rel="noopener noreferrer">
+      <img loading="lazy" src={item.image} alt={item.title} />
       <p>{item.title}</p>
     </a>
   ))}

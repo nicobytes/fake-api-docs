@@ -1,115 +1,118 @@
 ---
 title: Categories
-description: Endpoints for Categories
+description: API endpoints for managing product categories
 ---
 
-## Get all categories
+Retrieve a list of all available categories.
 
-You can access the list of 5 categories by using the `/categories` endpoint.
+##### Request
 
-Request:
-
-```
+```sh
 [GET] https://api.escuelajs.co/api/v1/categories
 ```
 
-Response:
+##### Response
 
 ```json
 [
   {
     "id": 1,
     "name": "Clothes",
-    "image": "https://api.lorem.space/image/fashion?w=640&h=480&r=4278"
-  }
-  // ...
+    "slug": "clothes",
+    "image": "https://placehold.co/600x400"
+  },
+  // Additional categories...
 ]
 ```
 
-## Get a single category
+## Get a single category by ID
 
-You can get a single category by adding the `id` as a parameter: `/categories/<id>`
+Retrieve detailed information about a specific category by its ID.
 
-Request:
+##### Request
 
 ```sh
-[GET] https://api.escuelajs.co/api/v1/categories/1
+[GET] https://api.escuelajs.co/api/v1/categories/{id}
 ```
 
-Response:
+##### Response
 
 ```json
 {
   "id": 1,
   "name": "Clothes",
-  "image": "https://api.lorem.space/image/fashion?w=640&h=480&r=4278"
+  "slug": "clothes",
+  "image": "https://placehold.co/600x400"
 }
 ```
 
 ## Create a category
 
-You can create a new category by sending an object like the following to `/categories/`
+Create a new category by providing the required information.
 
-Request:
+##### Request
 
 ```sh
 [POST] https://api.escuelajs.co/api/v1/categories/
-# Body
+
+#Body
 {
   "name": "New Category",
   "image": "https://placeimg.com/640/480/any"
 }
 ```
 
-Response:
+##### Response
 
 ```json
 {
   "name": "New Category",
+  "slug": "new-category",
   "image": "https://placeimg.com/640/480/any",
   "id": 6
 }
 ```
 
-> Note that the image is an URLs.
+> **Note:** The image field must be a valid URL to an image resource.
 
 ## Update a category
 
-You can update a category exists by sending an object like the following and adding the `id` as a parameter: `/categories/<id>`
+Update an existing category's information by its ID.
 
-Request:
+##### Request
 
 ```sh
-[PUT] https://api.escuelajs.co/api/v1/categories/3
-# Body
+[PUT] https://api.escuelajs.co/api/v1/categories/{id}
+
+#Body
 {
-  "name": "Change title"
+  "name": "Updated Category Name",
+  "image": "https://placeimg.com/640/480/any"
 }
 ```
 
-Response:
+##### Response
 
 ```json
 {
   "id": 3,
-  "name": "Change title",
-  "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=7358"
+  "name": "Updated Category Name",
+  "slug": "updated-category-name",
+  "image": "https://placehold.co/600x400"
 }
 ```
 
-> Note that it is not necessary to send all product attributes, just send the attributes that want to update.
-
 ## Delete a category
 
-You can delete a category exists by adding the `id` as a parameter: `/categories/{id}`
+Remove a category from the system by its ID.
 
-Request:
+##### Request
 
 ```sh
-[DELETE] https://api.escuelajs.co/api/v1/categories/1
+[DELETE] https://api.escuelajs.co/api/v1/categories/{id}
 ```
 
-Response:
+##### Response
 
 ```json
 true
@@ -117,42 +120,45 @@ true
 
 ## Get all products by category
 
-You can get the products by category adding the `categoryID` as a parameter to `/categories/{categoryID}/products`
+Retrieve all products that belong to a specific category with pagination support.
 
-Request:
+##### Request
 
+```sh
+[GET] https://api.escuelajs.co/api/v1/categories/{id}/products
 ```
-[GET] https://api.escuelajs.co/api/v1/categories/1/products
-```
 
-Response:
+##### Response
 
 ```json
 [
   {
     "id": 4,
     "title": "Handmade Fresh Table",
+    "slug": "handmade-fresh-table",
     "price": 687,
     "description": "Andy shoes are designed to keeping in...",
     "category": {
       "id": 1,
       "name": "Others",
-      "image": "https://placeimg.com/640/480/any?r=0.591926261873231"
+      "slug": "others",
+      "image": "https://placehold.co/600x400"
     },
     "images": [
-      "https://placeimg.com/640/480/any?r=0.9178516507833767",
-      "https://placeimg.com/640/480/any?r=0.9300320592588625",
-      "https://placeimg.com/640/480/any?r=0.8807778235430017"
+      "https://placehold.co/600x400",
+      "https://placehold.co/600x400",
+      "https://placehold.co/600x400"
     ]
-  }
-  // ...
+  },
+  // Additional products...
 ]
 ```
 
-## Schema Category
+## Category Schema
 
-| Attribute | Type   | Description                    |
-| --------- | ------ | ------------------------------ |
-| id        | number | The id of the category.        |
-| name      | string | Name of the category.          |
-| image     | string | The string with URL to a image |
+| Attribute | Type   | Description                           |
+| --------- | ------ | ------------------------------------- |
+| id        | number | The unique identifier of the category |
+| name      | string | Name of the category                  |
+| image     | string | URL to the category's image           |
+| slug      | string | URL-friendly version of the name      |
