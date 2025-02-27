@@ -46,6 +46,33 @@ Retrieve detailed information about a specific category by its ID.
 }
 ```
 
+## Get a single category by slug
+
+Retrieve detailed information about a specific category by its slug.
+
+##### Request
+
+```sh
+[GET] https://api.escuelajs.co/api/v1/categories/slug/{slug}
+```
+
+##### Response
+
+```json
+{
+  "id": 1,
+  "name": "Clothes",
+  "slug": "clothes",
+  "image": "https://placehold.co/600x400"
+}
+```
+
+##### Response
+
+```json
+
+```
+
 ## Create a category
 
 Create a new category by providing the required information.
