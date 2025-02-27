@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Platzi Fake Store API",
-      favicon: "/favicon.png",
+      favicon: "/icon.png",
       head: [
         {
           tag: "meta",
@@ -57,7 +57,7 @@ export default defineConfig({
         },
       ],
       logo: {
-        src: "./src/assets/logo.png",
+        src: "./src/assets/icon.png",
       },
       social: {
         github: "https://github.com/PlatziLabs/fake-api-backend",
